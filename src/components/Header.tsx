@@ -38,16 +38,24 @@ export default function Header() {
   const menuItems = ['Posts', 'Sobre Autor', 'Contato'];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      className='h-16'
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className='sm:hidden'
         />
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className='font-bold text-inherit'>ACME</p>
-        </NavbarBrand>
+        <Link
+          href='/'
+          color='foreground'
+        >
+          <NavbarBrand>
+            <AcmeLogo />
+            <p className='font-bold text-inherit'>ACME</p>
+          </NavbarBrand>
+        </Link>
       </NavbarContent>
 
       <NavbarContent
